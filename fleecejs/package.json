@@ -1,0 +1,36 @@
+{
+  "name": "fleecejs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/fleece.umd.cjs",
+  "module": "./dist/fleece.js",
+  "exports": {
+    ".": {
+      "import": "./dist/fleece.js",
+      "require": "./dist/fleece.umd.cjs",
+      "default": "./dist/fleece.umd.cjs",
+      "types": "./dist/fleece.d.ts"
+    }
+  },
+  "typings": "./dist/fleece.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && cp src/fleece.d.ts dist/fleece.d.ts",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "loglevel": "^1.8.1"
+  }
+}
